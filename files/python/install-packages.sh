@@ -1,8 +1,6 @@
 #!/bin/bash
 set -eux -o pipefail
 
-pip install --upgrade pip setuptools wheel
-
 # Install base python packages
 pip install -r /tmp/packer/python/requirements.txt
 
