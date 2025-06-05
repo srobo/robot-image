@@ -21,7 +21,8 @@ echo 'VIDEO_CAMERA = "1"' >> /boot/config.txt
 mv /tmp/packer/system/srobo-profile.sh /etc/profile.d/srobo.sh
 chmod 755 /etc/profile.d/srobo.sh
 
-# Remove a buggy udev package that breaks the USB tree if FTDI chips are plugged into too many USB hubs
+# Remove a buggy udev rule that breaks the USB tree if FTDI chips are plugged into too many USB hubs
 # See https://github.com/raspberrypi/linux/issues/3779#issuecomment-709481662
 # and https://groups.google.com/g/linux.debian.bugs.dist/c/5jI9dDZgfUU
-apt-get remove -y rpi.gpio-common
+# Installed via rpi.gpio-common, but removed manually to keep python3-rpi.gpio
+rm /lib/udev/rules.d/60-rpi.gpio-common.rules
