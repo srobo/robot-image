@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     name: Build image
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04-arm
     permissions:
       # Needed for creating releases
       contents: write
